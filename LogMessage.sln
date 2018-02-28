@@ -1,0 +1,88 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ci", "Ci", "{632F52EE-11E8-496C-A6EE-705DA3244656}"
+	ProjectSection(SolutionItems) = preProject
+		Ci\artillery.yml = Ci\artillery.yml
+		Ci\cf-prod.yml = Ci\cf-prod.yml
+		Ci\cf-stage.yml = Ci\cf-stage.yml
+		Ci\concourse-params.yml = Ci\concourse-params.yml
+		Ci\concourse-pipeline.yml = Ci\concourse-pipeline.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{777489D9-6DEA-4E68-BB92-75DE239CFCE2}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{60E8030A-DF19-4C92-AB78-83DC41A845CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{75BF876D-229F-4D70-BFAE-FA5B141D59E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MyProduct.Services.LogMessage", "MyProduct.Services.LogMessage", "{5848F326-8537-4AD4-9DC0-93DFBF5DDFBE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MyProduct.Services.LogMessage.IntegrationTests", "MyProduct.Services.LogMessage.IntegrationTests", "{80492D74-93E1-4F6B-A94C-CDFD90A6874C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MyProduct.Services.LogMessage.SmokeTests", "MyProduct.Services.LogMessage.SmokeTests", "{FB385A38-8945-446D-AF9F-6C0550F73146}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MyProduct.Services.LogMessage.UnitTests", "MyProduct.Services.LogMessage.UnitTests", "{B793BEB2-FF2E-45F8-867E-D00C67DAB218}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogMessage", "Src\MyProduct.Services.LogMessage\LogMessage.csproj", "{A5AF8D50-6606-4C55-AAA2-8C64B31EB70A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogMessage.SmokeTests", "Test\MyProduct.Services.LogMessage.SmokeTests\LogMessage.SmokeTests.csproj", "{696C9902-06A9-4C6F-994C-BA73996F654C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogMessage.UnitTests", "Test\MyProduct.Services.LogMessage.UnitTests\LogMessage.UnitTests.csproj", "{FD136A53-950A-41BC-B7AA-86BA1D81743D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5AF8D50-6606-4C55-AAA2-8C64B31EB70A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5AF8D50-6606-4C55-AAA2-8C64B31EB70A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5AF8D50-6606-4C55-AAA2-8C64B31EB70A}.Debug|x64.ActiveCfg = Debug|x64
+		{A5AF8D50-6606-4C55-AAA2-8C64B31EB70A}.Debug|x64.Build.0 = Debug|x64
+		{A5AF8D50-6606-4C55-AAA2-8C64B31EB70A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5AF8D50-6606-4C55-AAA2-8C64B31EB70A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5AF8D50-6606-4C55-AAA2-8C64B31EB70A}.Release|x64.ActiveCfg = Release|x64
+		{A5AF8D50-6606-4C55-AAA2-8C64B31EB70A}.Release|x64.Build.0 = Release|x64
+		{696C9902-06A9-4C6F-994C-BA73996F654C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{696C9902-06A9-4C6F-994C-BA73996F654C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{696C9902-06A9-4C6F-994C-BA73996F654C}.Debug|x64.ActiveCfg = Debug|x64
+		{696C9902-06A9-4C6F-994C-BA73996F654C}.Debug|x64.Build.0 = Debug|x64
+		{696C9902-06A9-4C6F-994C-BA73996F654C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{696C9902-06A9-4C6F-994C-BA73996F654C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{696C9902-06A9-4C6F-994C-BA73996F654C}.Release|x64.ActiveCfg = Release|x64
+		{696C9902-06A9-4C6F-994C-BA73996F654C}.Release|x64.Build.0 = Release|x64
+		{FD136A53-950A-41BC-B7AA-86BA1D81743D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD136A53-950A-41BC-B7AA-86BA1D81743D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD136A53-950A-41BC-B7AA-86BA1D81743D}.Debug|x64.ActiveCfg = Debug|x64
+		{FD136A53-950A-41BC-B7AA-86BA1D81743D}.Debug|x64.Build.0 = Debug|x64
+		{FD136A53-950A-41BC-B7AA-86BA1D81743D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD136A53-950A-41BC-B7AA-86BA1D81743D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD136A53-950A-41BC-B7AA-86BA1D81743D}.Release|x64.ActiveCfg = Release|x64
+		{FD136A53-950A-41BC-B7AA-86BA1D81743D}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5848F326-8537-4AD4-9DC0-93DFBF5DDFBE} = {60E8030A-DF19-4C92-AB78-83DC41A845CF}
+		{80492D74-93E1-4F6B-A94C-CDFD90A6874C} = {75BF876D-229F-4D70-BFAE-FA5B141D59E3}
+		{FB385A38-8945-446D-AF9F-6C0550F73146} = {75BF876D-229F-4D70-BFAE-FA5B141D59E3}
+		{B793BEB2-FF2E-45F8-867E-D00C67DAB218} = {75BF876D-229F-4D70-BFAE-FA5B141D59E3}
+		{A5AF8D50-6606-4C55-AAA2-8C64B31EB70A} = {5848F326-8537-4AD4-9DC0-93DFBF5DDFBE}
+		{696C9902-06A9-4C6F-994C-BA73996F654C} = {FB385A38-8945-446D-AF9F-6C0550F73146}
+		{FD136A53-950A-41BC-B7AA-86BA1D81743D} = {B793BEB2-FF2E-45F8-867E-D00C67DAB218}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B70D802-D936-4A61-9EFF-7696EF546DCA}
+	EndGlobalSection
+EndGlobal

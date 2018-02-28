@@ -1,0 +1,64 @@
+
+# GIT INFO
+git-email: david@dierfventures.com
+git-name: David Dieruf
+src-and-test-url: https://github.com/ddieruf/log-message
+src-and-test-branch: master
+dotnet-pipelines-url: https://github.com/ddieruf/dotnet-pipelines
+dotnet-pipelines-branch: master
+#github-private-key: |
+
+####################
+
+#ARTIFACTORY INFO
+artifactory-repo-id: log-message
+articatory-host: http://artifactory.stupidapplications.local/artifactory
+#artifactory-token: 
+
+#SONARQUBE INFO
+sonar-project-key: log-message
+sonar-project-name: log-message
+sonar-host: http://10.0.2.3:9000
+#sonar-login-key: 
+sonar-scanner-version: 3.0.3.778
+sonar-msbuild-version: 4.0.2.892
+sonar-timeout-seconds: 240
+
+#DOTNET CORE INFO
+dotnet-version: 2.0.3
+dotnet-framework: netcoreapp2.0 #https://docs.microsoft.com/en-us/dotnet/standard/frameworks
+#optionally provide runtime value if you want the include entire framework in artifact
+dotnet-runtime-id: ''  #https://docs.microsoft.com/en-us/dotnet/core/rid-catalog
+dotnet-platform: x64 #https://docs.microsoft.com/en-us/dotnet/core/rid-catalog
+dotnet-test-logger: ''  #https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-vstest
+
+#DOTNET SOLUTION INFO
+src-csproj-location-in-solution: Src/MyProduct.Services.LogMessage/LogMessage.csproj
+unit-test-csproj-location-in-solution: Test/MyProduct.Services.LogMessage.UnitTests/LogMessage.UnitTests.csproj
+integration-test-location-in-solution: Test/MyProduct.Services.LogMessage.IntegrationTests/LogMessage.IntegrationTests.csproj
+smoke-test-csproj-location-in-solution: Test/MyProduct.Services.LogMessage.SmokeTests/LogMessage.SmokeTests.csproj
+unit-test-dll-name: LogMessage.UnitTests.dll
+integration-test-dll-name: LogMessage.IntegrationTests.dll
+smoke-test-dll-name: LogMessage.SmokeTests.dll
+
+#CLOUD FOUNDRY INFO
+cf-cli-version: 6.33.1
+cf-stage-manifest-location-in-solution: "Ci/cf-stage.yml"
+#cf-stage-api-url:
+#cf-stage-username:
+#cf-stage-password:
+cf-stage-org: test
+cf-stage-space: stage
+cf-stage-app-name: log-message
+
+cf-prod-manifest-location-in-solution: "Ci/cf-prod.yml"
+#cf-prod-api-url: 
+#cf-prod-username: 
+#cf-prod-password: 
+cf-prod-org: test
+cf-prod-space: prod
+cf-prod-app-name: log-message
+
+#ARTILLERY INFO
+artillery-environment: stage
+artillery-manifest-location-in-solution: "Ci/artillery.yml"

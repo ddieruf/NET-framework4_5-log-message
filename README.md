@@ -1,4 +1,4 @@
-# log-message-framework46
+# log-message-framework45
 
 A dotnet framework solution to be built with [dotnet-pipelines](https://github.com/ddieruf/dotnet-pipelines).
 
@@ -28,7 +28,7 @@ Add additional notes about how to deploy this on a live system
 * [Visual Studio 2017 Community](http://www.dropwizard.io/1.0.2/docs/) - To Write code
 * [dotnet-pipelines](https://github.com/ddieruf/dotnet-pipelines) - To test and deploy
 * [xUnit](http://www.dropwizard.io/1.0.2/docs/) - For testing code
-* [netframework4.6](https://docs.microsoft.com/en-us/dotnet/standard/frameworks) - The runtime
+* [netframework4.5](https://docs.microsoft.com/en-us/dotnet/standard/frameworks) - The runtime
 * [ubuntu.16.04-x64](https://docs.microsoft.com/en-us/dotnet/core/rid-catalog) - The OS
 * [SonarQube](XXXX) - For code quality
 * [Artifactory](XXX) - For storing build artifacts

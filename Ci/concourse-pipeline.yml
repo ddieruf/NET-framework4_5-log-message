@@ -127,26 +127,6 @@ jobs:
     params:
       file: keyvalout/keyval.properties
 
-- name: integration-test
-  serial: true
-  plan:
-  - aggregate:
-    - get: keyval
-    - get: dotnet-pipelines
-    - get: src-and-test
-      trigger: true
-      passed:
-        - unit-test
-  - task: integration-test
-    file: dotnet-pipelines/concourse-tasks/integration-test/task.yml
-    params:
-      <<: *dotnet-core-params
-      <<: *dotnet-solution-params
-      <<: *artifactory-params
-  - put: keyval
-    params:
-      file: keyvalout/keyval.properties
-
 - name: push-to-cf-stage
   serial: true
   plan:

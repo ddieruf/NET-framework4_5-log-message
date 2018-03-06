@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime;
 using Xunit;
 using MyProduct.Services.LogMessage.Models;
 using System.Linq;

@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Runtime;
 using Xunit;
 using MyProduct.Services.LogMessage.Models;
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Runtime;
 
 /*
 The Unit Tests are focused on making sure the Interface class is working. This will in turn also test the data store.
@@ -12,7 +12,7 @@ The program and startup classes are not used.
  */
 namespace MyProduct.Services.LogMessage.UnitTests
 {
-	[Collection("Add message collection")]
+	[Xunit.Collection("Add message collection")]
 	public class AddMessage : IDisposable{
 		private readonly Interfaces.Message message;
 		private readonly Interfaces.MessageType messageType;
@@ -37,7 +37,7 @@ namespace MyProduct.Services.LogMessage.UnitTests
 			get { return new Models.DTOs.Message.Add("This is an error"); }
 		}
 		
-		[Fact(DisplayName = "Info message saved successfully")]
+		[Xunit.Fact(DisplayName = "Info message saved successfully")]
 		public void AddInfoMessage_Success()
 		{
 			// Arrange
@@ -49,7 +49,7 @@ namespace MyProduct.Services.LogMessage.UnitTests
 			Assert.IsType<long>(msgId);
 			Assert.True(msgId > 0);
 		}
-		[Fact(DisplayName = "Error message saved successfully")]
+		[Xunit.Fact(DisplayName = "Error message saved successfully")]
 		public void AddErrorMessage_Success()
 		{
 			// Arrange
@@ -61,7 +61,7 @@ namespace MyProduct.Services.LogMessage.UnitTests
 			Assert.IsType<long>(msgId);
 			Assert.True(msgId > 0);
 		}
-		[Fact(DisplayName = "Message object missing and error returned")]
+		[Xunit.Fact(DisplayName = "Message object missing and error returned")]
 		public void NullMessageObject_ErrorReturned()
 		{
 			// Arrange
@@ -73,7 +73,7 @@ namespace MyProduct.Services.LogMessage.UnitTests
 			Assert.NotNull(exception);
 			Assert.IsType<NullReferenceException>(exception);
 		}
-		[Fact(DisplayName = "Message text missing and error returned")]
+		[Xunit.Fact(DisplayName = "Message text missing and error returned")]
 		public void BlankMessageText_ErrorReturned()
 		{
 			// Arrange
@@ -87,7 +87,7 @@ namespace MyProduct.Services.LogMessage.UnitTests
 			Assert.IsType<ArgumentNullException>(exception);
 		}
 	}
-	[Collection("Get message collection")]
+	[Xunit.Collection("Get message collection")]
 	public class GetMessage : IDisposable
 	{
 		private readonly Interfaces.Message message;
@@ -108,7 +108,7 @@ namespace MyProduct.Services.LogMessage.UnitTests
 			get { return new Models.DTOs.Message.Add("This is an error"); }
 		}
 		
-		[Fact(DisplayName = "Get message successfully")]
+		[Xunit.Fact(DisplayName = "Get message successfully")]
 		public async Task GetMessage_Success()
 		{
 			// Arrange
@@ -126,7 +126,7 @@ namespace MyProduct.Services.LogMessage.UnitTests
 			Assert.Equal(msg.MessageType.Id, (long)Constants.MessageType.Info);
 			Assert.Equal(msg.MessageType.Name, Enum.GetName(typeof(Constants.MessageType), (long)Constants.MessageType.Info));
 		}
-		[Fact(DisplayName = "Get message with invalid id")]
+		[Xunit.Fact(DisplayName = "Get message with invalid id")]
 		public async Task GetMessage_InvalidId()
 		{
 			// Arrange
@@ -139,7 +139,7 @@ namespace MyProduct.Services.LogMessage.UnitTests
 			Assert.Null(msg);
 		}
 	}
-	[Collection("Search message collection")]
+	[Xunit.Collection("Search message collection")]
 	public class SearchMessage : IDisposable
 	{
 		private readonly Interfaces.Message message;
@@ -168,7 +168,7 @@ namespace MyProduct.Services.LogMessage.UnitTests
 			get { return new Models.DTOs.Message.Add("This is an error"); }
 		}
 		
-		[Fact(DisplayName = "Search messages by Constants.MessageType.Info and get result")]
+		[Xunit.Fact(DisplayName = "Search messages by Constants.MessageType.Info and get result")]
 		public void SearchMessageByType_Success()
 		{
 			// Arrange
@@ -187,7 +187,7 @@ namespace MyProduct.Services.LogMessage.UnitTests
 			Assert.IsAssignableFrom<IEnumerable<Models.DTOs.Message.Get>>(result);
 			Assert.Equal(3, result.Count());
 		}
-		[Fact(DisplayName = "Search messages by partial text and get result")]
+		[Xunit.Fact(DisplayName = "Search messages by partial text and get result")]
 		public void SearchMessageByPartialText_Success()
 		{
 			// Arrange
@@ -206,7 +206,7 @@ namespace MyProduct.Services.LogMessage.UnitTests
 			Assert.IsAssignableFrom<IEnumerable<Models.DTOs.Message.Get>>(result);
 			Assert.Equal(5, result.Count());
 		}
-		[Fact(DisplayName = "Search messages by exact text and get result")]
+		[Xunit.Fact(DisplayName = "Search messages by exact text and get result")]
 		public void SearchMessageByExactText_Success()
 		{
 			// Arrange
@@ -225,7 +225,7 @@ namespace MyProduct.Services.LogMessage.UnitTests
 			Assert.IsAssignableFrom<IEnumerable<Models.DTOs.Message.Get>>(result);
 			Assert.Equal(2, result.Count());
 		}
-		[Fact(DisplayName = "Search messages by partial text and get no result")]
+		[Xunit.Fact(DisplayName = "Search messages by partial text and get no result")]
 		public void SearchMessageByPartialText_Empty()
 		{
 			// Arrange
@@ -244,7 +244,7 @@ namespace MyProduct.Services.LogMessage.UnitTests
 			Assert.IsAssignableFrom<IEnumerable<Models.DTOs.Message.Get>>(result);
 			Assert.Equal(0, result.Count());
 		}
-		[Fact(DisplayName = "Search messages with null object and get error")]
+		[Xunit.Fact(DisplayName = "Search messages with null object and get error")]
 		public void SearchMessageNullCriteria_Error()
 		{
 			// Arrange
@@ -261,7 +261,7 @@ namespace MyProduct.Services.LogMessage.UnitTests
 			Assert.NotNull(exception);
 			Assert.IsType<ArgumentNullException>(exception);
 		}
-		[Fact(DisplayName = "Search messages with no criteria and get error")]
+		[Xunit.Fact(DisplayName = "Search messages with no criteria and get error")]
 		public void SearchMessageNoCriteria_Error()
 		{
 			// Arrange
@@ -279,7 +279,7 @@ namespace MyProduct.Services.LogMessage.UnitTests
 			Assert.NotNull(exception);
 			Assert.IsType<ArgumentOutOfRangeException>(exception);
 		}
-		[Fact(DisplayName = "Search messages by startDate and get result")]
+		[Xunit.Fact(DisplayName = "Search messages by startDate and get result")]
 		public void SearchMessageStartDate_Success()
 		{
 			// Arrange
@@ -303,7 +303,7 @@ namespace MyProduct.Services.LogMessage.UnitTests
 			Assert.IsAssignableFrom<IEnumerable<Models.DTOs.Message.Get>>(result);
 			Assert.Equal(2, result.Count());
 		}
-		[Fact(DisplayName = "Search messages by endDate and get result")]
+		[Xunit.Fact(DisplayName = "Search messages by endDate and get result")]
 		public void SearchMessageEndDate_Success()
 		{
 			// Arrange
@@ -327,7 +327,7 @@ namespace MyProduct.Services.LogMessage.UnitTests
 			Assert.IsAssignableFrom<IEnumerable<Models.DTOs.Message.Get>>(result);
 			Assert.Equal(4, result.Count());
 		}
-		[Fact(DisplayName = "Search messages by startDate and endDate and get result")]
+		[Xunit.Fact(DisplayName = "Search messages by startDate and endDate and get result")]
 		public void SearchMessageStartAndEndDate_Success()
 		{
 			// Arrange

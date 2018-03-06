@@ -136,7 +136,7 @@ jobs:
     - get: src-and-test
       trigger: true
       passed:
-        - integration-test
+        - unit-test
   - task: push-to-cf-stage
     file: dotnet-pipelines/concourse-tasks/push-to-cf-stage/task.yml
     params:
@@ -227,7 +227,7 @@ git-params: &git-params
   GIT_NAME: ((git-name))
 
 dotnet-core-params: &dotnet-core-params
-  DOTNET_VERSION: ((dotnet-version))
+  DOTNET_VERSION: ((dotnet-cli-version))
   DOTNET_FRAMEWORK: ((dotnet-framework))
   DOTNET_RUNTIME_ID: ((dotnet-runtime-id))
   DOTNET_PLATFORM: ((dotnet-platform))

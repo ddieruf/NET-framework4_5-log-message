@@ -19,9 +19,27 @@ Give examples
 
 A step by step series of examples that tell you have to get a development env running
 
-## Deployment
+## Pipeline Deployment
+To load the pipeline into concourse I had some challenges with powershell, line endings, Get-Content, etc etc. I have found it's best to run the fly cli from a linux terminal.
 
-Add additional notes about how to deploy this on a live system
+From Ubuntu:
+```
+fly -t con set-pipeline \
+  --config ./log-message-framework45/Ci/concourse-pipeline.yml \
+  --pipeline log-message-framework45 \
+  --load-vars-from ./log-message-framework45/Ci/concourse-params.yml \
+  --var "github-private-key=$(cat ./github-private-key.key)" \
+  --var "artifactory-token=XXXX" \
+  --var "sonar-login-key=XXXX" \
+  --var "cf-stage-api-url=https://api.system.mydomain.com" \
+  --var "cf-stage-username=XXXX" \
+  --var "cf-stage-password=XXXX" \
+  --var "cf-prod-api-url=https://api.system.mydomain.com" \
+  --var "cf-prod-username=XXXX" \
+  --var "cf-prod-password=XXXX" \
+  --var "github-username=XXXX" \
+  --var "github-password=XXXX"
+```
 
 ## Built With
 

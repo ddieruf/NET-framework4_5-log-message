@@ -25,7 +25,7 @@ sonar-msbuild-version: 4.0.2.892
 sonar-timeout-seconds: 240
 
 #DOTNET CORE INFO
-dotnet-version: 2.0.3
+dotnet-cli-version: 2.1.4
 dotnet-framework: net452 #https://docs.microsoft.com/en-us/dotnet/standard/frameworks
 #optionally provide runtime value if you want the include entire framework in artifact
 dotnet-runtime-id: ''  #https://docs.microsoft.com/en-us/dotnet/core/rid-catalog
@@ -35,10 +35,10 @@ dotnet-test-logger: ''  #https://docs.microsoft.com/en-us/dotnet/core/tools/dotn
 #DOTNET SOLUTION INFO
 src-csproj-location-in-solution: Src/MyProduct.Services.LogMessage/LogMessage.csproj
 unit-test-csproj-location-in-solution: Test/MyProduct.Services.LogMessage.UnitTests/LogMessage.UnitTests.csproj
-#integration-test-location-in-solution: Test/MyProduct.Services.LogMessage.IntegrationTests/LogMessage.IntegrationTests.csproj
+integration-test-location-in-solution: ''
 smoke-test-csproj-location-in-solution: Test/MyProduct.Services.LogMessage.SmokeTests/LogMessage.SmokeTests.csproj
 unit-test-dll-name: LogMessage.UnitTests.dll
-#integration-test-dll-name: LogMessage.IntegrationTests.dll
+integration-test-dll-name: ''
 smoke-test-dll-name: LogMessage.SmokeTests.dll
 
 #CLOUD FOUNDRY INFO

@@ -41,6 +41,12 @@
     <!-- Add the Facades directory.  Not sure how else to do this. Necessary at least for .NET 4.5 -->
     <AssemblySearchPaths Condition="'$(BaseFrameworkPathOverrideForMono)' != ''">$(FrameworkPathOverride)/Facades;$(AssemblySearchPaths)</AssemblySearchPaths>
   </PropertyGroup>
+  <Target Name="DisplayMessages">
+		<Message Text="TargetIsMono = $(TargetIsMono)" />
+		<Message Text="BaseFrameworkPathOverrideForMono = $(BaseFrameworkPathOverrideForMono)" />
+		<Message Text="FrameworkPathOverride = $(FrameworkPathOverride)" />
+		<Message Text="AssemblySearchPaths = $(AssemblySearchPaths)" />
+	</Target>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>

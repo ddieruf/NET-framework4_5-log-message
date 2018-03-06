@@ -26,11 +26,10 @@ sonar-timeout-seconds: 240
 
 #DOTNET CORE INFO
 dotnet-cli-version: 2.1.4
-dotnet-framework: net452 #https://docs.microsoft.com/en-us/dotnet/standard/frameworks
-#optionally provide runtime value if you want the include entire framework in artifact
-dotnet-runtime-id: ''  #https://docs.microsoft.com/en-us/dotnet/core/rid-catalog
-dotnet-platform: x64 #https://docs.microsoft.com/en-us/dotnet/core/rid-catalog
-dotnet-test-logger: ''  #https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-vstest
+dotnet-framework: net462
+dotnet-runtime-id: ''
+dotnet-platform: x64
+dotnet-test-logger: ''
 
 #DOTNET SOLUTION INFO
 src-csproj-location-in-solution: Src/MyProduct.Services.LogMessage/LogMessage.csproj

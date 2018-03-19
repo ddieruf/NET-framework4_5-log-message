@@ -10,14 +10,16 @@ dotnet-pipelines-branch: master
 
 ####################
 
-#ARTIFACTORY INFO
+#ARTIFACT INFO
+artifact-location-type: artifactory #local|artifactory
+artifact-folder-path: ""
 artifactory-repo-id: log-message-framework
 articatory-host: http://artifactory.stupidapplications.local/artifactory
 #artifactory-token: 
 
 #SONARQUBE INFO
 sonar-project-key: log-message-framework
-sonar-project-name: log-message
+sonar-project-name: log-message-framework
 sonar-host: http://10.0.2.3:9000
 #sonar-login-key: 
 sonar-scanner-version: 3.0.3.778
@@ -43,7 +45,7 @@ cf-stage-manifest-location-in-solution: "Ci/cf-stage.yml"
 #cf-stage-username:
 #cf-stage-password:
 cf-stage-org: test
-cf-stage-space: stage
+cf-stage-space: concourse_stage
 cf-stage-app-name: log-message-framework
 
 cf-prod-manifest-location-in-solution: "Ci/cf-prod.yml"
@@ -51,7 +53,7 @@ cf-prod-manifest-location-in-solution: "Ci/cf-prod.yml"
 #cf-prod-username: 
 #cf-prod-password: 
 cf-prod-org: test
-cf-prod-space: prod
+cf-prod-space: concourse_prod
 cf-prod-app-name: log-message-framework
 
 #ARTILLERY INFO
